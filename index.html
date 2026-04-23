@@ -268,7 +268,7 @@
   .jl-hero {
     background: var(--off-white);
     padding: 72px 40px 0;
-    padding-bottom: ;
+    padding-bottom: 40px;
     position: relative;
     overflow: hidden;
     min-height: 560px;
@@ -278,12 +278,12 @@
 
   .jl-hero-grid {
     display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 40px;
+    grid-template-columns: 1fr 460px;
+    gap: 48px;
     align-items: flex-end;
-    max-width: 1100px;
+    max-width: 1320px;
     margin: 0 auto;
-    width: 100%;
+    width: 92%;
   }
 
   .jl-hero-eyebrow {
@@ -355,7 +355,7 @@
     color: var(--navy-mid);
     font-size: 15.5px;
     line-height: 1.65;
-    max-width: 480px;
+    max-width: 620px;
     margin-bottom: 36px;
     font-weight: 400;
   }
@@ -506,7 +506,7 @@
     margin: 24px auto 24px;
     border-radius: 12px;
     overflow: hidden;
-    max-width: 900px;
+    max-width: 1100px;
     width: 100%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   }
@@ -525,20 +525,23 @@
   }
 
   .jl-stats-inner {
-    max-width: 1100px;
+    max-width: 1320px;
+    gap: 20px;
+
+    width: 92%;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 
   .jl-stat-item {
-    padding: 20px 0;
-    padding-left: 28px;
+    padding: 22px 20px;
+    /* balanced padding */
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    justify-content: flex-start;
+    /* align left instead of center */
+    gap: 14px;
   }
 
   .jl-stat-item:first-child {
@@ -702,7 +705,8 @@
   }
 
   .jl-how2-inner {
-    max-width: 1100px;
+    max-width: 1320px;
+    width: 92%;
     margin: 0 auto;
   }
 
@@ -738,7 +742,7 @@
   .jl-how2-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 32px;
   }
 
   /* STEP CARD */
@@ -853,7 +857,7 @@
   .jl-section-sub {
     color: #5A6A82;
     font-size: 15px;
-    max-width: 500px;
+    max-width: auto;
     margin: 0 auto;
     line-height: 1.6;
   }
@@ -1062,26 +1066,19 @@
     background: var(--blue-light);
   }
 
-  .jl-why-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 48px;
-    align-items: center;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
 
   .jl-why-img {
     position: relative;
+    height: 100%;
   }
 
   .jl-why-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 64px;
     align-items: stretch;
-    /* ✅ important */
-    max-width: 1100px;
+    max-width: 1320px;
+    width: 92%;
     margin: 0 auto;
   }
 
@@ -1090,18 +1087,6 @@
     height: 100%;
     border-radius: 20px;
     overflow: hidden;
-  }
-
-  .jl-why-img {
-    height: 100%;
-  }
-
-  .jl-why-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: left center;
-    /* 👈 change this */
   }
 
   .jl-why-photo img {
@@ -1150,6 +1135,7 @@
   }
 
   .jl-why-content .jl-section-header {
+    max-width: 640px;
     text-align: left;
     margin-bottom: 32px;
   }
@@ -1157,7 +1143,7 @@
   .jl-why-items {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
 
   .jl-why-item {
@@ -1205,7 +1191,8 @@
 
   /* SLIDER */
   .jl-slider {
-    max-width: 1100px;
+    max-width: 1280px;
+    width: 92%;
     margin: 0 auto;
     overflow: hidden;
   }
@@ -1280,7 +1267,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background: #FFD700;
-    color: #000;
+    color: var(--navy);
     font-size: 12px;
     font-weight: 700;
     padding: 6px 16px;
@@ -1341,7 +1328,7 @@
   .jl-featured-name {
     font-weight: 700;
     font-size: 15px;
-    color: #FFD700;
+    color: #ffffff;
   }
 
   /* role */
@@ -1440,12 +1427,16 @@
   }
 
   .jl-trust-inner {
-    max-width: 1100px;
+    max-width: 1320px;
+    /* increased */
+    width: 92%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    gap: 32px;
+    /* slightly more spacing */
+    text-align: center;
   }
 
   .jl-trust-label {
@@ -1484,8 +1475,11 @@
   .jl-faq-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    max-width: 1100px;
+    gap: 24px;
+    /* more breathing space */
+    max-width: 1320px;
+    /* increased width */
+    width: 92%;
     margin: 0 auto;
   }
 
@@ -1493,7 +1487,7 @@
     background: #E9F3FF;
     border-radius: 12px;
     border: 1px solid rgba(11, 22, 40, 0.07);
-    padding: 18px 20px;
+    padding: 22px 24px;
     transition: all 0.25s ease;
   }
 
@@ -1531,8 +1525,11 @@
   .jl-blog-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    max-width: 1100px;
+    gap: 28px;
+    /* more spacing for wider layout */
+    max-width: 1320px;
+    /* increased width */
+    width: 92%;
     margin: 0 auto;
   }
 
@@ -1585,7 +1582,7 @@
   }
 
   .jl-blog-body {
-    padding: 20px;
+    padding: 22px;
   }
 
   .jl-blog-title {
@@ -1599,7 +1596,7 @@
   }
 
   .jl-blog-excerpt {
-    font-size: 13px;
+    font-size: 13.5px;
     color: #5A6A82;
     line-height: 1.55;
     margin-bottom: 14px;
@@ -1607,7 +1604,7 @@
 
   .jl-blog-meta {
     font-size: 11.5px;
-    color: #B0BCCC;
+    color: #5A6A82;
     font-weight: 500;
   }
 
@@ -1618,7 +1615,6 @@
   .jl-trust-bar {
     background: white;
     padding: 48px 40px;
-    /* 🔥 increased height */
     border-top: 1px solid rgba(11, 22, 40, 0.06);
     border-bottom: 1px solid rgba(11, 22, 40, 0.06);
   }
@@ -1649,7 +1645,10 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 24px;
+    /* more breathing room */
+    max-width: 1000px;
+    /* keeps content from over-stretching */
   }
 
   /* BADGE CARDS */
@@ -1676,15 +1675,22 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 28px;
+    gap: 36px;
     margin-top: 10px;
   }
 
   .jl-trust-logos img {
     height: 32px;
     width: auto;
-    opacity: 0.65;
+    object-fit: contain;
+    opacity: 0.7;
     transition: all 0.25s ease;
+  }
+
+  .jl-trust-logos img:hover {
+    opacity: 1;
+    transform: scale(1.08);
+    filter: grayscale(0%);
   }
 
   /* DUMMY LOGOS */
@@ -1805,10 +1811,14 @@
 
   .jl-footer-grid {
     display: grid;
-    grid-template-columns: 220px repeat(4, 1fr);
-    gap: 40px;
-    max-width: 1100px;
-    margin: 0 auto 36px;
+    grid-template-columns: 260px repeat(4, 1fr);
+    /* wider brand column */
+    gap: 48px;
+    /* more spacing */
+    max-width: 1320px;
+    /* increased width */
+    width: 92%;
+    margin: 0 auto 40px;
   }
 
   .jl-footer-brand p {
@@ -1841,7 +1851,8 @@
   }
 
   .jl-footer-bottom {
-    max-width: 1100px;
+    max-width: 1320px;
+    width: 92%;
     margin: 0 auto;
     padding-top: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
@@ -2047,9 +2058,7 @@
       <div class="jl-hero-content">
         <div class="jl-hero-eyebrow">Data-Driven Lead Generation</div>
         <h1 class="jl-hero-h1">
-          Targeted Mailing Lists,<br>
-          Email Lists, and<br>
-          Sales Leads <span class="accent">Built<br>for Your Business</span>
+          Targeted Mailing Lists, Email Lists, and Sales Leads <span class="accent">Built<br>for Your Business</span>
         </h1>
         <p class="jl-hero-sub">
           Since 2007, Jared's Leads has helped businesses connect with the right prospects using verified data. Business
@@ -2100,12 +2109,12 @@
         </div>
       </div>
     </div>
-    <div class="jl-hero-video">
+    <!-- <div class="jl-hero-video">
       <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen>
       </iframe>
-    </div>
+    </div> -->
   </section>
 
   <!-- STATS BAR -->
@@ -2201,7 +2210,6 @@
     </div>
     <div class="jl-products-grid">
       <div class="jl-product-card">
-        <div class="jl-product-num">01</div>
         <div class="jl-product-icon">📬</div>
         <div class="jl-product-title">Business Mailing Lists</div>
         <div class="jl-product-desc">Target B2B prospects by industry, SIC/NAICS code, employee size, and geography.
@@ -2209,7 +2217,6 @@
         <a href="#" class="jl-product-link">Explore Lists →</a>
       </div>
       <div class="jl-product-card">
-        <div class="jl-product-num">02</div>
         <div class="jl-product-icon">🏠</div>
         <div class="jl-product-title">Consumer Mailing Lists</div>
         <div class="jl-product-desc">Reach households by demographics — age, income, homeownership, zip code. 200M+
@@ -2217,7 +2224,6 @@
         <a href="#" class="jl-product-link">Explore Lists →</a>
       </div>
       <div class="jl-product-card">
-        <div class="jl-product-num">03</div>
         <div class="jl-product-icon">📧</div>
         <div class="jl-product-title">Email Lists</div>
         <div class="jl-product-desc">Targeted B2B and B2C email lists for digital campaigns. Verified, opt-in data with
@@ -2225,7 +2231,6 @@
         <a href="#" class="jl-product-link">Explore Lists →</a>
       </div>
       <div class="jl-product-card">
-        <div class="jl-product-num">04</div>
         <div class="jl-product-icon">📞</div>
         <div class="jl-product-title">Telemarketing Lists</div>
         <div class="jl-product-desc">Phone-verified lists for outbound calling campaigns. DNC-scrubbed and
@@ -2233,7 +2238,6 @@
         <a href="#" class="jl-product-link">Explore Lists →</a>
       </div>
       <div class="jl-product-card">
-        <div class="jl-product-num">05</div>
         <div class="jl-product-icon">🔧</div>
         <div class="jl-product-title">Data Services</div>
         <div class="jl-product-desc">CASS certification, NCOA processing, data appending, deduplication, and email
@@ -2241,7 +2245,6 @@
         <a href="#" class="jl-product-link">Explore Services →</a>
       </div>
       <div class="jl-product-card">
-        <div class="jl-product-num">06</div>
         <div class="jl-product-icon">✉️</div>
         <div class="jl-product-title">Direct Mail Services</div>
         <div class="jl-product-desc">End-to-end direct mail — from design and print to delivery. Full-service campaigns
@@ -2349,7 +2352,7 @@
       <div class="jl-why-content">
         <div class="jl-section-header">
           <div class="jl-eyebrow-sm">Why Choose Us</div>
-          <h2 class="jl-section-h2">17 Years of Data<br>Expertise Behind<br>Every List</h2>
+          <h2 class="jl-section-h2">17 Years of Data Expertise Behind Every List</h2>
           <p class="jl-section-sub">We're not a data portal with a ticket number. We're a team of experts dedicated to
             your results.</p>
         </div>
@@ -2388,6 +2391,46 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <section class="jl-trust-bar">
+    <div class="jl-trust-inner">
+
+      <div class="jl-trust-label">
+        Trusted & Recognized
+      </div>
+
+      <div class="jl-trust-items">
+
+        <div class="jl-trust-item">
+          🏆 Inc. 5000 Honoree
+        </div>
+
+        <div class="jl-trust-item">
+          ⭐ BBB A+ Rated
+        </div>
+
+        <div class="jl-trust-item">
+          ✅ 98% Data Accuracy
+        </div>
+
+        <div class="jl-trust-item">
+          🔒 TCPA & CAN-SPAM Compliant
+        </div>
+
+        <!-- CLIENT LOGOS -->
+        <div class="jl-trust-logos">
+
+          <img src="Client_logo.png" alt="Client Logo 1">
+          <img src="Client_logo.svg" alt="Client Logo 2">
+          <img src="Client_logo2.svg" alt="Client Logo 3">
+
+        </div>
+
+      </div>
+
     </div>
   </section>
 
@@ -2688,46 +2731,6 @@
       <button
         style="background:transparent;color:var(--coral);border:2px solid var(--coral);padding:12px 28px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14.5px;font-weight:600;cursor:pointer;">Explore
         All Resources →</button>
-    </div>
-  </section>
-
-  <!-- Trust Bar -->
-  <section class="jl-trust-bar">
-    <div class="jl-trust-inner">
-
-      <div class="jl-trust-label">
-        Trusted & Recognized
-      </div>
-
-      <div class="jl-trust-items">
-
-        <div class="jl-trust-item">
-          🏆 Inc. 5000 Honoree
-        </div>
-
-        <div class="jl-trust-item">
-          ⭐ BBB A+ Rated
-        </div>
-
-        <div class="jl-trust-item">
-          ✅ 98% Data Accuracy
-        </div>
-
-        <div class="jl-trust-item">
-          🔒 TCPA & CAN-SPAM Compliant
-        </div>
-
-        <!-- CLIENT LOGOS -->
-        <div class="jl-trust-logos">
-
-          <div class="jl-dummy-logo alt">BrandOne</div>
-          <div class="jl-dummy-logo alt">BrandTwo</div>
-          <div class="jl-dummy-logo alt">BrandThree</div>
-
-        </div>
-
-      </div>
-
     </div>
   </section>
 
