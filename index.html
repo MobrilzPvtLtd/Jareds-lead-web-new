@@ -28,39 +28,24 @@
   }
 
   /* NAV */
+
+  /* NAVBAR */
   .jl-nav {
     background: white;
     padding: 0 40px;
     height: 72px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: calc(100% - 40px);
-    max-width: 1400px;
-    z-index: 100;
-    transition: all 0.3s ease;
-    border-radius: 60px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    width: 100%;
+    box-sizing: border-box;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   }
 
-  .jl-nav.scrolled {
-    top: 16px;
-    height: 64px;
-    padding: 0 32px;
-    background: white;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-    border-radius: 50px;
-    width: calc(100% - 60px);
-    backdrop-filter: blur(12px);
-    background: white;
-  }
-
+  /* LOGO */
   .jl-logo {
     display: flex;
     align-items: center;
@@ -69,14 +54,9 @@
   .jl-logo-img {
     height: 40px;
     width: auto;
-    display: block;
-    transition: all 0.3s ease;
   }
 
-  .jl-nav.scrolled .jl-logo-img {
-    height: 36px;
-  }
-
+  /* NAV LINKS */
   .jl-nav-links {
     display: flex;
     gap: 28px;
@@ -85,41 +65,15 @@
     padding: 0;
   }
 
-  .jl-nav-links li {
-    list-style: none;
-  }
-
   .jl-nav-links a {
     color: var(--navy);
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    letter-spacing: 0.2px;
-    transition: all 0.2s;
-    position: relative;
     font-family: 'DM Sans', sans-serif;
   }
 
-  .jl-nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--coral);
-    transition: width 0.2s ease;
-    border-radius: 2px;
-  }
-
-  .jl-nav-links a:hover::after {
-    width: 100%;
-  }
-
-  .jl-nav-links a:hover {
-    color: var(--coral);
-  }
-
+  /* RIGHT SIDE */
   .jl-nav-right {
     display: flex;
     align-items: center;
@@ -127,34 +81,22 @@
   }
 
   .jl-phone {
-    color: var(--navy);
     font-size: 13.5px;
     font-weight: 500;
-    white-space: nowrap;
-    font-family: 'DM Sans', sans-serif;
   }
 
   .jl-btn-primary {
     background: var(--coral);
     color: white;
     border: none;
-    padding: 10px 22px;
-    border-radius: 40px;
-    font-family: 'DM Sans', sans-serif;
+    padding: 10px 20px;
+    border-radius: 6px;
     font-size: 13.5px;
     font-weight: 600;
     cursor: pointer;
-    letter-spacing: 0.2px;
-    transition: all 0.2s ease;
-    white-space: nowrap;
   }
 
-  .jl-btn-primary:hover {
-    background: #ff5230;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(255, 107, 74, 0.25);
-  }
-
+  /* HAMBURGER */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -166,109 +108,103 @@
     width: 24px;
     height: 2px;
     background: var(--navy);
-    transition: 0.2s;
-    border-radius: 2px;
   }
 
+  /* TABLET */
   @media (max-width: 1024px) {
-    .jl-nav-links {
-      gap: 20px;
-    }
-
     .jl-phone {
       display: none;
     }
   }
 
+  /* MOBILE */
   @media (max-width: 768px) {
-    .jl-nav {
-      padding: 0 20px;
-      top: 12px;
-      width: calc(100% - 24px);
-      border-radius: 40px;
-    }
-
-    .jl-nav.scrolled {
-      width: calc(100% - 30px);
-      padding: 0 20px;
-      top: 10px;
-    }
-
     .hamburger {
       display: flex;
     }
 
-    .hamburger.active span:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(7px, -7px);
-    }
-
     .jl-nav-links {
-      position: fixed;
-      top: 85px;
-      left: -100%;
-      width: 90%;
-      max-width: 320px;
-      height: auto;
+      position: absolute;
+      top: 72px;
+      left: 0;
+      width: 100%;
       background: white;
+
       flex-direction: column;
-      padding: 24px 28px;
-      border-radius: 28px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      gap: 20px;
-      transition: left 0.3s ease;
-      backdrop-filter: blur(20px);
-      background: rgba(255, 255, 255, 0.98);
-      border: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 20px;
+      gap: 16px;
+
+      display: none;
     }
 
     .jl-nav-links.active {
-      left: 5%;
-    }
-
-    .jl-nav-links a {
-      font-size: 16px;
-      display: block;
-      padding: 8px 0;
-    }
-
-    .jl-nav-links a::after {
-      bottom: 0;
-    }
-
-    .jl-nav-right {
-      gap: 10px;
-    }
-
-    .jl-btn-primary {
-      padding: 8px 16px;
-      font-size: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .jl-btn-primary {
-      padding: 6px 14px;
-      font-size: 11px;
-    }
-
-    .jl-logo-img {
-      height: 32px;
+      display: flex;
     }
   }
 
   /* HERO */
+  /* PLAY BUTTON */
+  .jl-hero-play {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--coral);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(232, 83, 42, 0.35);
+    transition: all 0.25s ease;
+  }
+
+  .jl-hero-play:hover {
+    transform: scale(1.1);
+    background: #ff5230;
+  }
+
+  /* MODAL */
+  .jl-video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .jl-video-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+  }
+
+  .jl-video-content iframe {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+  }
+
+  .jl-video-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+  }
+
   .jl-hero {
     background: var(--off-white);
     padding: 72px 40px 0;
-    padding-bottom: 40px;
     position: relative;
     overflow: hidden;
     min-height: 560px;
@@ -318,7 +254,7 @@
     background: rgba(114, 166, 240, 0.15);
     border: 1px solid rgba(42, 118, 232, 0.3);
     color: var(--navy);
-    font-size: 11.5px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 1.2px;
     text-transform: uppercase;
@@ -352,7 +288,7 @@
   }
 
   .jl-hero-sub {
-    color: var(--navy-mid);
+    color: var(--navy);
     font-size: 15.5px;
     line-height: 1.65;
     max-width: 620px;
@@ -390,13 +326,12 @@
     margin: auto;
     border-radius: 10px;
     font-family: 'DM Sans', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 600;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
     gap: 8px;
   }
 
@@ -695,135 +630,6 @@
     }
   }
 
-  /* =========================
-   HOW IT WORKS (CRO STYLE)
-========================= */
-
-  .jl-how2 {
-    padding: 64px 40px;
-    background: #E9F3FF;
-  }
-
-  .jl-how2-inner {
-    max-width: 1320px;
-    width: 92%;
-    margin: 0 auto;
-  }
-
-  /* HEADER */
-  .jl-how2-header {
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .jl-how2-eyebrow {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.6px;
-    text-transform: uppercase;
-    color: var(--coral);
-    margin-bottom: 10px;
-  }
-
-  .jl-how2-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
-
-  .jl-how2-sub {
-    font-size: 14px;
-    color: #5A6A82;
-  }
-
-  /* STEPS GRID */
-  .jl-how2-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-  }
-
-  /* STEP CARD */
-  .jl-how2-step {
-    background: var(--blue-light);
-    border-radius: 16px;
-    padding: 28px 22px;
-    border: 1px solid rgba(11, 22, 40, 0.06);
-    position: relative;
-    text-align: center;
-    transition: all 0.25s ease;
-  }
-
-  /* HOVER */
-  .jl-how2-step:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(11, 22, 40, 0.12);
-  }
-
-  /* NUMBER (BIG FADED) */
-  .jl-how2-num {
-    position: absolute;
-    top: 6px;
-    left: 18px;
-    font-size: 40px;
-    font-weight: 800;
-    color: rgba(11, 22, 40, 0.201);
-    font-family: 'Montserrat', sans-serif;
-  }
-
-  /* ICON */
-  .jl-how2-icon {
-    font-size: 26px;
-    margin-bottom: 14px;
-  }
-
-  /* TITLE */
-  .jl-how2-step h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--coral);
-    margin-bottom: 8px;
-  }
-
-  /* TEXT */
-  .jl-how2-step p {
-    font-size: 13.5px;
-    color: #5A6A82;
-    line-height: 1.6;
-  }
-
-  /* CONNECTOR LINE (desktop only) */
-  .jl-how2-step:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: -10px;
-    width: 20px;
-    height: 2px;
-    background: var(--coral);
-    transform: translateY(-50%);
-  }
-
-  /* CTA */
-  .jl-how2-cta {
-    text-align: center;
-    margin-top: 32px;
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 992px) {
-    .jl-how2-steps {
-      grid-template-columns: 1fr;
-    }
-
-    .jl-how2-step::after {
-      display: none;
-    }
-  }
-
   /* PRODUCTS */
   .jl-products {
     padding: 72px 40px;
@@ -836,7 +642,7 @@
   }
 
   .jl-eyebrow-sm {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 1.8px;
     text-transform: uppercase;
@@ -846,7 +652,7 @@
 
   .jl-section-h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 34px;
+    font-size: 40px;
     font-weight: 800;
     color: var(--navy);
     letter-spacing: -0.8px;
@@ -855,8 +661,8 @@
   }
 
   .jl-section-sub {
-    color: #5A6A82;
-    font-size: 15px;
+    color: #4d5c6c;
+    font-size: 16px;
     max-width: auto;
     margin: 0 auto;
     line-height: 1.6;
@@ -915,7 +721,7 @@
   /* TITLE */
   .jl-product-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
     margin-bottom: 8px;
     color: var(--navy);
@@ -930,8 +736,8 @@
 
   /* DESCRIPTION */
   .jl-product-desc {
-    font-size: 13.5px;
-    color: #5A6A82;
+    font-size: 16px;
+    color: #4d5c6c;
     line-height: 1.55;
     margin-bottom: 16px;
     transition: color 0.25s ease;
@@ -944,7 +750,7 @@
 
   /* LINK */
   .jl-product-link {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--coral);
     display: flex;
@@ -959,105 +765,131 @@
     color: rgba(255, 255, 255, 0.85);
   }
 
-  /* NUMBER */
-  .jl-product-num {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    color: rgba(11, 22, 40, 0.51);
-    letter-spacing: 1px;
-    transition: color 0.25s ease;
-  }
-
-  /* NUMBER ON HOVER */
-  .jl-product-card:hover .jl-product-num {
-    color: rgba(255, 255, 255, 0.4);
-  }
-
   /* HOW IT WORKS */
-  .jl-how {
-    padding: 72px 40px;
-    background: var(--navy);
+  .jl-how2 {
+    padding: 64px 40px;
+    background: #fafafa;
   }
 
-  .jl-how .jl-section-h2 {
-    color: white;
+  .jl-how2-inner {
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
   }
 
-  .jl-how .jl-section-sub {
-    color: rgba(255, 255, 255, 0.45);
+  /* HEADER */
+  .jl-how2-header {
+    text-align: center;
+    margin-bottom: 40px;
   }
 
-  .jl-how .jl-eyebrow-sm {
+  .jl-how2-eyebrow {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
     color: var(--coral);
+    margin-bottom: 10px;
   }
 
-  .jl-steps {
+  .jl-how2-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .jl-how2-sub {
+    font-size: 16px;
+    color: #4d5c6c;
+  }
+
+  /* STEPS GRID */
+  .jl-how2-steps {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
-    max-width: 1100px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    overflow: hidden;
+    gap: 32px;
   }
 
-  .jl-step {
-    padding: 36px 32px;
-    background: rgba(255, 255, 255, 0.03);
+  /* STEP CARD */
+  .jl-how2-step {
+    background: var(--blue-light);
+    border-radius: 16px;
+    padding: 28px 22px;
+    border: 1px solid rgba(11, 22, 40, 0.06);
     position: relative;
+    text-align: center;
+    transition: all 0.25s ease;
   }
 
-  .jl-step:not(:last-child)::after {
-    content: '→';
+  /* HOVER */
+  .jl-how2-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(11, 22, 40, 0.12);
+  }
+
+  /* NUMBER (BIG FADED) */
+  .jl-how2-num {
     position: absolute;
-    right: -14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--coral);
-    font-size: 20px;
-    z-index: 2;
-  }
-
-  .jl-step-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
+    top: 6px;
+    left: 18px;
+    font-size: 40px;
     font-weight: 800;
-    color: rgba(255, 255, 255, 0.06);
-    line-height: 1;
-    margin-bottom: 12px;
-  }
-
-  .jl-step-icon {
-    width: 48px;
-    height: 48px;
-    background: rgba(232, 83, 42, 0.15);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    margin-bottom: 16px;
-    border: 1px solid rgba(232, 83, 42, 0.2);
-  }
-
-  .jl-step-title {
+    color: rgba(11, 22, 40, 0.201);
     font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 8px;
-    letter-spacing: -0.3px;
   }
 
-  .jl-step-desc {
-    font-size: 13.5px;
-    color: rgba(255, 255, 255, 0.45);
+  /* ICON */
+  .jl-how2-icon {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  /* TITLE */
+  .jl-how2-step h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--coral);
+    margin-bottom: 8px;
+  }
+
+  /* TEXT */
+  .jl-how2-step p {
+    font-size: 16px;
+    color: #4d5c6c;
     line-height: 1.6;
+  }
+
+  /* CONNECTOR LINE (desktop only) */
+  .jl-how2-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 2px;
+    background: var(--coral);
+    transform: translateY(-50%);
+  }
+
+  /* CTA */
+  .jl-how2-cta {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 18px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 992px) {
+    .jl-how2-steps {
+      grid-template-columns: 1fr;
+    }
+
+    .jl-how2-step::after {
+      display: none;
+    }
   }
 
   /* WHY */
@@ -1170,22 +1002,22 @@
 
   .jl-why-item-title {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--navy);
     margin-bottom: 3px;
   }
 
   .jl-why-item-desc {
-    font-size: 13px;
-    color: #5A6A82;
+    font-size: 16px;
+    color: #4d5c6c;
     line-height: 1.55;
   }
 
   /* TESTIMONIALS */
   .jl-testimonials {
     padding: 80px 40px;
-    background: #E9F3FF;
+    background: #fafafa;
     overflow: hidden;
   }
 
@@ -1268,7 +1100,7 @@
     transform: translate(-50%, -50%);
     background: #FFD700;
     color: var(--navy);
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     padding: 6px 16px;
     border-radius: 20px;
@@ -1291,7 +1123,7 @@
    TEXT
 ========================= */
   .jl-featured-text {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.8;
     margin-bottom: 26px;
     color: rgba(255, 255, 255, 0.9);
@@ -1321,19 +1153,19 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 18px;
   }
 
   /* name */
   .jl-featured-name {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 16px;
     color: #ffffff;
   }
 
   /* role */
   .jl-featured-role {
-    font-size: 13px;
+    font-size: 14px;
     color: rgba(255, 255, 255, 0.7);
   }
 
@@ -1369,7 +1201,7 @@
   }
 
   .jl-testi-text {
-    font-size: 14.5px;
+    font-size: 16px;
     color: var(--navy);
     line-height: 1.7;
     margin-bottom: 20px;
@@ -1401,7 +1233,7 @@
   }
 
   .jl-testi-role {
-    font-size: 12px;
+    font-size: 14px;
     color: #6b7c93;
   }
 
@@ -1418,199 +1250,7 @@
     }
   }
 
-  /* TRUST BAR */
-  .jl-trust {
-    background: #E9F3FF;
-    padding: 28px 40px;
-    border-top: 1px solid rgba(11, 22, 40, 0.06);
-    border-bottom: 1px solid rgba(11, 22, 40, 0.06);
-  }
-
-  .jl-trust-inner {
-    max-width: 1320px;
-    /* increased */
-    width: 92%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    /* slightly more spacing */
-    text-align: center;
-  }
-
-  .jl-trust-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #B0BCCC;
-    white-space: nowrap;
-  }
-
-  .jl-trust-logos {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .jl-trust-badge {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border: 1px solid rgba(11, 22, 40, 0.08);
-    border-radius: 8px;
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #3A4A5E;
-  }
-
-  .jl-faq {
-    padding: 72px 40px;
-    background: var(--blue-light);
-  }
-
-  .jl-faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    /* more breathing space */
-    max-width: 1320px;
-    /* increased width */
-    width: 92%;
-    margin: 0 auto;
-  }
-
-  .jl-faq-item {
-    background: #E9F3FF;
-    border-radius: 12px;
-    border: 1px solid rgba(11, 22, 40, 0.07);
-    padding: 22px 24px;
-    transition: all 0.25s ease;
-  }
-
-  .jl-faq-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(11, 22, 40, 0.08);
-  }
-
-  /* QUESTION */
-  .jl-faq-q {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
-
-  /* REMOVE PLUS ICON */
-  .jl-faq-q::after {
-    display: none;
-  }
-
-  /* ANSWER ALWAYS VISIBLE */
-  .jl-faq-a {
-    font-size: 13.5px;
-    color: #5A6A82;
-    line-height: 1.65;
-  }
-
-  /* BLOG */
-  .jl-blog {
-    padding: 72px 40px;
-    background: #E9F3FF;
-  }
-
-  .jl-blog-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    /* more spacing for wider layout */
-    max-width: 1320px;
-    /* increased width */
-    width: 92%;
-    margin: 0 auto;
-  }
-
-  .jl-blog-card {
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid rgba(11, 22, 40, 0.07);
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-
-  .jl-blog-card:hover {
-    transform: translateY(-3px);
-  }
-
-  .jl-blog-img {
-    height: 160px;
-    background: var(--blue-light);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .jl-blog-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .jl-blog-img-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
-  }
-
-  .jl-blog-tag {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    background: var(--coral);
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    padding: 4px 10px;
-    border-radius: 100px;
-  }
-
-  .jl-blog-body {
-    padding: 22px;
-  }
-
-  .jl-blog-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15.5px;
-    font-weight: 700;
-    color: var(--navy);
-    line-height: 1.35;
-    margin-bottom: 8px;
-    letter-spacing: -0.2px;
-  }
-
-  .jl-blog-excerpt {
-    font-size: 13.5px;
-    color: #5A6A82;
-    line-height: 1.55;
-    margin-bottom: 14px;
-  }
-
-  .jl-blog-meta {
-    font-size: 11.5px;
-    color: #5A6A82;
-    font-weight: 500;
-  }
-
-  /* =========================
-   TRUST BADGE BAR (ENHANCED)
-========================= */
+  /* TRUST BADGE BAR */
 
   .jl-trust-bar {
     background: white;
@@ -1625,7 +1265,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    /* 🔥 stack for better layout */
     align-items: center;
     gap: 28px;
     text-align: center;
@@ -1637,7 +1276,7 @@
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: #9AA8BD;
+    color: #4d5c6c;
   }
 
   /* BADGE GRID */
@@ -1646,18 +1285,15 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
-    /* more breathing room */
     max-width: 1000px;
-    /* keeps content from over-stretching */
   }
 
   /* BADGE CARDS */
   .jl-trust-item {
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 600;
     color: #2E3A4D;
     padding: 12px 18px;
-    /* 🔥 bigger padding */
     border: 1px solid rgba(11, 22, 40, 0.08);
     border-radius: 10px;
     background: #fafafa;
@@ -1740,6 +1376,152 @@
     }
   }
 
+  .jl-faq {
+    padding: 72px 40px;
+    background: var(--blue-light);
+  }
+
+  .jl-faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .jl-faq-item {
+    background: #E9F3FF;
+    border-radius: 12px;
+    border: 1px solid rgba(11, 22, 40, 0.07);
+    padding: 22px 24px;
+    transition: all 0.25s ease;
+  }
+
+  .jl-faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(11, 22, 40, 0.08);
+  }
+
+  /* QUESTION */
+  .jl-faq-q {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  /* REMOVE PLUS ICON */
+  .jl-faq-q::after {
+    display: none;
+  }
+
+  /* ANSWER ALWAYS VISIBLE */
+  .jl-faq-a {
+    font-size: 14px;
+    color: #4d5c6c;
+    line-height: 1.65;
+  }
+
+  /* BLOG */
+  .jl-blog {
+    padding: 72px 40px;
+    background: #E9F3FF;
+  }
+
+  .jl-blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1320px;
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .jl-blog-card {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(11, 22, 40, 0.07);
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .jl-blog-card:hover {
+    transform: translateY(-3px);
+  }
+
+  .jl-blog-img {
+    height: 160px;
+    background: var(--blue-light);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .jl-blog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .jl-blog-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+  }
+
+  .jl-blog-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--coral);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 100px;
+  }
+
+  .jl-blog-body {
+    padding: 22px;
+  }
+
+  .jl-blog-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.35;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+
+  .jl-blog-excerpt {
+    font-size: 14px;
+    color: #4d5c6c;
+    line-height: 1.55;
+    margin-bottom: 14px;
+  }
+
+  .jl-blog-meta {
+    font-size: 12px;
+    color: #5A6A82;
+    font-weight: 500;
+  }
+
+  /* TRUST BADGE BAR */
+
+  .jl-trust-bar {
+    background: white;
+    padding: 48px 40px;
+    border-top: 1px solid rgba(11, 22, 40, 0.06);
+    border-bottom: 1px solid rgba(11, 22, 40, 0.06);
+  }
+
   /* CTA FOOTER */
   .jl-cta-footer {
     padding: 72px 40px;
@@ -1759,7 +1541,7 @@
 
   .jl-cta-footer-h2 {
     font-family: 'Montserrat', sans-serif;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 800;
     color: white;
     letter-spacing: -0.8px;
@@ -1769,7 +1551,7 @@
 
   .jl-cta-footer-sub {
     color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 10px;
   }
 
@@ -1805,7 +1587,7 @@
 
   /* FOOTER */
   .jl-footer {
-    background: #E9F3FF;
+    background: #fafafa;
     padding: 48px 40px 28px;
   }
 
@@ -1829,7 +1611,7 @@
   }
 
   .jl-footer-col-title {
-    font-size: 11px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -1898,98 +1680,107 @@
   }
 </style>
 
-<script type="application/ld+json">
+<script>
+  /* =========================
+     MOBILE NAV TOGGLE
+  ========================= */
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".jl-nav-links");
 
-  window.addEventListener("scroll", function () {
-    const nav = document.querySelector(".jl-nav");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+  }
 
-    if (window.scrollY > 50) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
+
+  /* =========================
+     VIDEO MODAL
+  ========================= */
+  const playBtn = document.querySelector(".jl-hero-play");
+  const modal = document.querySelector(".jl-video-modal");
+  const closeBtn = document.querySelector(".jl-video-close");
+  const iframe = document.querySelector(".jl-video-content iframe");
+
+  if (playBtn && modal) {
+    playBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener("click", () => {
+      closeModal();
+    });
+  }
+
+  /* CLOSE ON OUTSIDE CLICK */
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+
+  /* CLOSE ON ESC KEY */
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeModal();
     }
   });
 
+  /* STOP VIDEO WHEN CLOSED */
+  function closeModal() {
+    if (modal) modal.style.display = "none";
 
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-
-    {
-      "@type": "Question",
-      "name": "What is a mailing list?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A mailing list is a collection of contact data such as names, addresses, or emails used for marketing campaigns like direct mail, email outreach, and telemarketing."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "How much does a mailing list cost?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Pricing varies by list type, targeting criteria, and volume. Costs typically range from a few cents to several dollars per record depending on quality and specificity."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "What types of mailing lists are available?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We offer business mailing lists, consumer mailing lists, email lists, telemarketing lists, direct mail services, and custom-built targeted data."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "How do I buy a targeted email list?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can request a custom list by defining your audience criteria such as industry, job title, location, or demographics."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "What is the difference between a mailing list and an email list?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "A mailing list contains physical postal addresses for direct mail campaigns, while an email list contains verified email addresses for digital outreach."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "How often is your data updated?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our data is continuously updated through multiple source feeds and hygiene cycles to ensure accuracy and deliverability."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Do you offer data hygiene and list cleaning services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We provide data hygiene services including deduplication, verification, and data appending."
-      }
-    },
-
-    {
-      "@type": "Question",
-      "name": "Can I get a sample list before purchasing?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes, you can request a sample list to evaluate data quality before purchasing."
-      }
+    if (iframe) {
+      const src = iframe.src;
+      iframe.src = src; // reset video
     }
+  }
 
-  ]
-}
+
+  /* =========================
+     CATEGORY ACTIVE STATE
+  ========================= */
+  const categories = document.querySelectorAll(".jl-category-item");
+
+  categories.forEach(item => {
+    item.addEventListener("click", () => {
+      categories.forEach(i => i.classList.remove("active"));
+      item.classList.add("active");
+    });
+  });
+
+
+  /* =========================
+     OPTIONAL: SMOOTH SCROLL FOR ANCHORS
+  ========================= */
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+
+  /* =========================
+     OPTIONAL: AUTO CLOSE NAV ON LINK CLICK (MOBILE)
+  ========================= */
+  document.querySelectorAll(".jl-nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      if (navLinks.classList.contains("active")) {
+        navLinks.classList.remove("active");
+      }
+    });
+  });
 </script>
 
 <div class="jl-page">
@@ -1997,7 +1788,9 @@
   <!-- NAV -->
   <nav class="jl-nav">
     <div class="jl-logo">
-      <img src="logo.png" alt="Jared's Leads Logo" class="jl-logo-img">
+      <a href="">
+        <img src="logo.png" alt="Jared's Leads Logo" class="jl-logo-img">
+      </a>
     </div>
 
     <div class="hamburger" id="hamburger">
@@ -2007,7 +1800,6 @@
     </div>
 
     <ul class="jl-nav-links" id="navLinks">
-      <li><a href="#">Home</a></li>
       <li><a href="#">Solutions</a></li>
       <li><a href="#">Industries</a></li>
       <li><a href="#">How It Works</a></li>
@@ -2020,34 +1812,6 @@
       <button class="jl-btn-primary">Build Your List</button>
     </div>
   </nav>
-
-  <script>
-    window.addEventListener('scroll', function () {
-      const nav = document.querySelector('.jl-nav');
-      if (window.scrollY > 20) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    });
-
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('navLinks');
-
-    if (hamburger) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-      });
-    }
-
-    document.querySelectorAll('.jl-nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        if (hamburger) hamburger.classList.remove('active');
-      });
-    });
-  </script>
 
   <!-- HERO -->
   <section class="jl-hero">
@@ -2096,6 +1860,9 @@
         <div class="jl-hero-person">
           <img src="Hero.png" alt="Hero Image" class="jl-hero-img">
         </div>
+
+        <div class="jl-hero-play" id="playBtn">▶</div>
+
         <div class="jl-hero-badge">
           <div class="jl-hero-badge-icon">📊</div>
           <div class="jl-hero-badge-text">
@@ -2116,6 +1883,13 @@
       </iframe>
     </div> -->
   </section>
+
+  <div class="jl-video-modal" id="videoModal">
+    <div class="jl-video-content">
+      <span class="jl-video-close" id="closeModal">&times;</span>
+      <iframe id="videoFrame" src="" allow="autoplay" allowfullscreen></iframe>
+    </div>
+  </div>
 
   <!-- STATS BAR -->
   <div class="jl-stats">
@@ -2300,39 +2074,6 @@
 
     </div>
   </section>
-  <!-- <section class="jl-how">
-    <div class="jl-section-header">
-      <div class="jl-hero-eyebrow">Simple Process</div>
-      <h2 class="jl-section-h2">Your Custom List in 3 Steps</h2>
-      <p class="jl-section-sub">Done in 24–48 hours. No complicated setup, no long contracts.</p>
-    </div>
-    <div class="jl-steps">
-      <div class="jl-step">
-        <div class="jl-step-num">01</div>
-        <div class="jl-step-icon">🎯</div>
-        <div class="jl-step-title">Tell Us Your Target Audience</div>
-        <div class="jl-step-desc">Define your ideal customer by geography, demographics, industry, business size, or
-          behavior. We'll help you refine it.</div>
-      </div>
-      <div class="jl-step">
-        <div class="jl-step-num">02</div>
-        <div class="jl-step-icon">⚙️</div>
-        <div class="jl-step-title">We Build Your Custom List</div>
-        <div class="jl-step-desc">Our data team sources and compiles verified records from premium providers, applying
-          hygiene and deduplication.</div>
-      </div>
-      <div class="jl-step">
-        <div class="jl-step-num">03</div>
-        <div class="jl-step-icon">📥</div>
-        <div class="jl-step-title">Receive Verified, Deliverable Data</div>
-        <div class="jl-step-desc">Download your list in CSV, Excel, or label-ready formats. CASS-certified for maximum
-          deliverability.</div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:36px;">
-      <button class="jl-cta-main" style="margin:0 auto;">Get Started Today</button>
-    </div>
-  </section> -->
 
   <!-- WHY JARED'S LEADS -->
   <section class="jl-why">
@@ -2426,6 +2167,8 @@
           <img src="Client_logo.png" alt="Client Logo 1">
           <img src="Client_logo.svg" alt="Client Logo 2">
           <img src="Client_logo2.svg" alt="Client Logo 3">
+          <img src="Client_logo2.png" alt="Client Logo 3">
+          <img src="Client_logo3.svg" alt="Client Logo 3">
 
         </div>
 
@@ -2437,7 +2180,7 @@
   <!-- TESTIMONIALS -->
   <section class="jl-testimonials">
     <div class="jl-section-header">
-      <div class="jl-client-eyebrow">Client Feedback</div>
+      <!-- <div class="jl-client-eyebrow">Client Feedback</div> -->
       <h2 class="jl-section-h2">What Our Clients Say</h2>
       <p class="jl-section-sub">
         Real results from businesses who trust Jared's Leads for their prospect data.
@@ -2445,7 +2188,7 @@
     </div>
 
     <div class="jl-featured-testimonial">
-      <div class="jl-featured-badge">⭐ Best Client Story</div>
+      <!-- <div class="jl-featured-badge">⭐ Best Client Story</div> -->
 
       <div class="jl-featured-content">
         <div class="jl-featured-stars">★★★★★</div>
@@ -2587,20 +2330,6 @@
       </div>
     </div>
   </section>
-
-  <!-- TRUST BAR -->
-  <!-- <div class="jl-trust">
-    <div class="jl-trust-inner">
-      <span class="jl-trust-label">Trusted & Certified</span>
-      <div class="jl-trust-logos">
-        <div class="jl-trust-badge">🏅 Inc. 5000 Honoree</div>
-        <div class="jl-trust-badge">⭐ BBB A+ Rated</div>
-        <div class="jl-trust-badge">✅ CASS Certified</div>
-        <div class="jl-trust-badge">🔒 TCPA Compliant</div>
-        <div class="jl-trust-badge">📧 CAN-SPAM Compliant</div>
-      </div>
-    </div>
-  </div> -->
 
   <!-- FAQ -->
   <section class="jl-faq">
@@ -2758,10 +2487,11 @@
   <footer class="jl-footer">
     <div class="jl-footer-grid">
       <div class="jl-footer-brand">
-        <div class="jl-logo">
+        <a href="">
           <img src="logo.png" alt="Jared's Leads Logo" class="jl-logo-img">
-        </div>
-        <p>17+ years of data expertise helping businesses reach the right prospects with verified mailing lists and
+        </a>
+        <p style="font-size: 16px;">17+ years of data expertise helping businesses reach the right prospects with
+          verified mailing lists and
           sales leads.</p>
       </div>
       <div>
